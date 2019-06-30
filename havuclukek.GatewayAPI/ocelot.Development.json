@@ -1,0 +1,91 @@
+﻿{
+    "ReRoutes": [
+        {
+            "DownstreamPathTemplate": "/api/catalog",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "havuclukek.catalogserver",
+                    "Port": 7002
+                }
+            ],
+            "UpstreamPathTemplate": "/catalog",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/catalog/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "havuclukek.catalogserver",
+                    "Port": 7002
+                }
+            ],
+            "UpstreamPathTemplate": "/catalog/{id}",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/catalog",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "havuclukek.catalogserver",
+                    "Port": 7002
+                }
+            ],
+            "UpstreamPathTemplate": "/catalog",
+            "UpstreamHttpMethod": [ "POST" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/users",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "havuclukek.identityserver",
+                    "Port": 7001
+                }
+            ],
+            "UpstreamPathTemplate": "/auth",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/users/auth",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "havuclukek.identityserver",
+                    "Port": 7001
+                }
+            ],
+            "UpstreamPathTemplate": "/auth",
+            "UpstreamHttpMethod": [ "POST" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/users/getAllUsers",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "havuclukek.identityserver",
+                    "Port": 7001
+                }
+            ],
+            "UpstreamPathTemplate": "/auth/users",
+            "UpstreamHttpMethod": [ "GET" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/users/getUser/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "havuclukek.identityserver",
+                    "Port": 7001
+                }
+            ],
+            "UpstreamPathTemplate": "/auth/users/{id}",
+            "UpstreamHttpMethod": [ "GET" ]
+        }
+    ],
+    "GlobalConfiguration": {
+        
+    }
+}
