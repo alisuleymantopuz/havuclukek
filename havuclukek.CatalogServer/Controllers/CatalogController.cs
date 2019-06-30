@@ -1,18 +1,28 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using havuclukek.security.Authorization;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace havuclukek.CatalogServer.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class CatalogController : ControllerBase
     {
-        // GET api/values
+        private ILogger<CatalogController> _logger;
+
+        public CatalogController(ILogger<CatalogController> logger)
+        {
+            _logger = logger;
+        }
+
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
+            _logger.LogInformation($"get request : {DateTime.UtcNow}");
+
             return new string[] { "value1", "value2" };
         }
 

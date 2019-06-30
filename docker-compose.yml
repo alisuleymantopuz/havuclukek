@@ -1,0 +1,69 @@
+version: '3.4'
+
+services:
+
+  elasticsearch:
+   image: docker.elastic.co/elasticsearch/elasticsearch:6.2.4
+   container_name: elasticsearch
+   ports:
+    - "9200:9200"
+   volumes:
+    - elasticsearch-data:/usr/share/elasticsearch/data
+   networks:
+    - docker-network
+
+  kibana:
+   image: docker.elastic.co/kibana/kibana:6.2.4
+   container_name: kibana
+   ports:
+    - "5601:5601"
+   depends_on:
+    - elasticsearch
+   networks:
+    - docker-network
+  
+  havuclukek.gatewayapi:
+    image: ${DOCKER_REGISTRY-}havuclukek.gatewayapi
+    build:
+      context: .
+      dockerfile: havuclukek.gatewayAPI/Dockerfile
+    networks:
+      - docker-network
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://*:7000
+    depends_on:
+      - havuclukek.identityserver
+      - havuclukek.catalogserver
+    ports:
+      - "7000:7000"
+
+  havuclukek.identityserver:
+    image: ${DOCKER_REGISTRY-}havuclukek.identityserver
+    build:
+      context: .
+      dockerfile: havuclukek.identityServer/Dockerfile
+    networks:
+      - docker-network
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://*:7001
+    ports:
+      - "7001:7001"
+
+  havuclukek.catalogserver:
+    image: ${DOCKER_REGISTRY-}havuclukek.catalogserver
+    build:
+      context: .
+      dockerfile: havuclukek.catalogServer/Dockerfile
+    networks:       - docker-network
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://*:7002
+    ports:
+      - "7002:7002"
+
+networks:   docker-network:     driver: bridge
+
+volumes:
+  elasticsearch-data:

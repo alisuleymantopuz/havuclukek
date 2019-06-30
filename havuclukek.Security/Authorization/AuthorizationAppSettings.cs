@@ -1,10 +1,7 @@
-﻿using System;
-namespace havuclukek.Security.Authorization
+﻿namespace havuclukek.security.Authorization
 {
     public class AuthorizationAppSettings
     {
-        public AuthorizationAppSettings()
-        {
-        }
+        public string Secret { get; set; }
     }
 }

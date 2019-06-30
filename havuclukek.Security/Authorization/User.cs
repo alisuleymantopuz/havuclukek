@@ -1,4 +1,4 @@
-﻿namespace havuclukek.Security.Authorization
+﻿namespace havuclukek.security.Authorization
 {
     public class User
     {

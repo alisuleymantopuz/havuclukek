@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
-namespace havuclukek.Security.Authorization
+namespace havuclukek.security.Authorization
 {
     public interface IUserService
     {
-        User Authenticate(string username, string password);
+        AuthToken Authenticate(string username, string password);
         IEnumerable<User> GetAll();
         User GetById(int id);
     }

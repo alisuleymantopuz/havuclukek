@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 
-namespace havuclukek.Security.Authorization
+namespace havuclukek.security.Authorization
 {
     public static class AuthorizationModule
     {

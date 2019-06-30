@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
-namespace havuclukek.Security.Authorization
+namespace havuclukek.security.Authorization
 {
     public class UserService : IUserService
     {
@@ -28,7 +29,7 @@ namespace havuclukek.Security.Authorization
         {
         }
 
-        public User Authenticate(string username, string password)
+        public AuthToken Authenticate(string username, string password)
         {
             var user = _users.SingleOrDefault(x => x.Username == username && x.Password == password);
 
@@ -50,12 +51,11 @@ namespace havuclukek.Security.Authorization
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
-            user.Token = tokenHandler.WriteToken(token);
-
-            // remove password before returning
-            user.Password = null;
-
-            return user;
+            var authToken = new AuthToken
+            {
+                Token = tokenHandler.WriteToken(token)
+            };
+            return authToken;
         }
 
         public IEnumerable<User> GetAll()

@@ -1,7 +1,23 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "havuclukek.IdentityServer", "havuclukek.IdentityServer\havuclukek.IdentityServer.csproj", "{B8A4F839-CD44-4232-BB74-DC66869A3C72}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "havuclukek.identityServer", "havuclukek.identityServer\havuclukek.identityServer.csproj", "{B8A4F839-CD44-4232-BB74-DC66869A3C72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "havuclukek.catalogServer", "havuclukek.catalogServer\havuclukek.catalogServer.csproj", "{73FCB1AC-2AD2-426F-A317-977FD6D223D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "havuclukek.gatewayAPI", "havuclukek.gatewayAPI\havuclukek.gatewayAPI.csproj", "{8071E55F-829F-466C-B144-A84A31B446FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "microServices", "microServices", "{B4D0CC4B-B354-44D3-99A4-183B4287A9CC}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{D3CA3D4C-852B-403B-80C8-D40BDAF0EF09}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{E9D9E418-538E-4799-A3E9-13F89769F0AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "havuclukek.security", "havuclukek.security\havuclukek.security.csproj", "{205F9F1B-EAF4-48AB-954E-EC4A3938ACEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "havuclukek.utils", "havuclukek.utils\havuclukek.utils.csproj", "{529BB751-D299-4A82-A8E7-C0310A7FA932}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{AF3FAE89-046A-4A91-8210-7789FE83A2E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,5 +29,32 @@ Global
 		{B8A4F839-CD44-4232-BB74-DC66869A3C72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8A4F839-CD44-4232-BB74-DC66869A3C72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8A4F839-CD44-4232-BB74-DC66869A3C72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73FCB1AC-2AD2-426F-A317-977FD6D223D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73FCB1AC-2AD2-426F-A317-977FD6D223D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73FCB1AC-2AD2-426F-A317-977FD6D223D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73FCB1AC-2AD2-426F-A317-977FD6D223D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8071E55F-829F-466C-B144-A84A31B446FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8071E55F-829F-466C-B144-A84A31B446FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8071E55F-829F-466C-B144-A84A31B446FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8071E55F-829F-466C-B144-A84A31B446FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3CA3D4C-852B-403B-80C8-D40BDAF0EF09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3CA3D4C-852B-403B-80C8-D40BDAF0EF09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3CA3D4C-852B-403B-80C8-D40BDAF0EF09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3CA3D4C-852B-403B-80C8-D40BDAF0EF09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{205F9F1B-EAF4-48AB-954E-EC4A3938ACEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{205F9F1B-EAF4-48AB-954E-EC4A3938ACEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{205F9F1B-EAF4-48AB-954E-EC4A3938ACEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{205F9F1B-EAF4-48AB-954E-EC4A3938ACEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{529BB751-D299-4A82-A8E7-C0310A7FA932}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{529BB751-D299-4A82-A8E7-C0310A7FA932}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{529BB751-D299-4A82-A8E7-C0310A7FA932}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{529BB751-D299-4A82-A8E7-C0310A7FA932}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{73FCB1AC-2AD2-426F-A317-977FD6D223D6} = {B4D0CC4B-B354-44D3-99A4-183B4287A9CC}
+		{B8A4F839-CD44-4232-BB74-DC66869A3C72} = {B4D0CC4B-B354-44D3-99A4-183B4287A9CC}
+		{205F9F1B-EAF4-48AB-954E-EC4A3938ACEA} = {E9D9E418-538E-4799-A3E9-13F89769F0AE}
+		{529BB751-D299-4A82-A8E7-C0310A7FA932} = {E9D9E418-538E-4799-A3E9-13F89769F0AE}
+		{D3CA3D4C-852B-403B-80C8-D40BDAF0EF09} = {AF3FAE89-046A-4A91-8210-7789FE83A2E9}
 	EndGlobalSection
 EndGlobal

@@ -1,16 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
-  <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
-    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App">
-      <PrivateAssets Condition="'%(PackageReference.Version)' == ''">all</PrivateAssets>
-      <Publish Condition="'%(PackageReference.Version)' == ''">true</Publish>
-    </PackageReference>
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
-  </ItemGroup>
-
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.2</TargetFramework>
+        <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+        <DockerComposeProjectPath>../docker-compose.dcproj</DockerComposeProjectPath>
+        <UserSecretsId>1ae35849-60e7-42e8-8657-8719da8230eb</UserSecretsId>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.App">
+            <PrivateAssets Condition="'%(PackageReference.Version)' == ''">all</PrivateAssets>
+            <Publish Condition="'%(PackageReference.Version)' == ''">true</Publish>
+        </PackageReference>
+        <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+        <PackageReference Include="Serilog" Version="2.8.0" />
+        <PackageReference Include="Serilog.Exceptions" Version="5.0.0" />
+        <PackageReference Include="Serilog.Extensions.Logging" Version="2.0.4" />
+        <PackageReference Include="Serilog.Sinks.ElasticSearch" Version="7.1.0" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\havuclukek.utils\havuclukek.utils.csproj">
+            <GlobalPropertiesToRemove>
+            </GlobalPropertiesToRemove>
+        </ProjectReference>
+        <ProjectReference Include="..\havuclukek.security\havuclukek.security.csproj">
+            <GlobalPropertiesToRemove>
+            </GlobalPropertiesToRemove>
+        </ProjectReference>
+    </ItemGroup>
 </Project>

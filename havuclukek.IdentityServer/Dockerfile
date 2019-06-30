@@ -1,18 +1,17 @@
 FROM mcr.microsoft.com/dotnet/core/aspnet:2.2-stretch-slim AS base
 WORKDIR /app
 EXPOSE 80
-EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
 WORKDIR /src
-COPY havuclukek.IdentityServer/havuclukek.IdentityServer.csproj havuclukek.IdentityServer/
-RUN dotnet restore "havuclukek.IdentityServer/havuclukek.IdentityServer.csproj"
+COPY havuclukek.identityServer/havuclukek.identityServer.csproj havuclukek.identityServer/
+RUN dotnet restore "havuclukek.identityServer/havuclukek.identityServer.csproj"
 COPY . .
-WORKDIR "/src/havuclukek.IdentityServer"
-RUN dotnet build "havuclukek.IdentityServer.csproj" -c Release -o /app
+WORKDIR "/src/havuclukek.identityServer"
+RUN dotnet build "havuclukek.identityServer.csproj" -c Release -o /app
 
 FROM build AS publish
-RUN dotnet publish "havuclukek.IdentityServer.csproj" -c Release -o /app
+RUN dotnet publish "havuclukek.identityServer.csproj" -c Release -o /app
 
 FROM base AS final
 WORKDIR /app

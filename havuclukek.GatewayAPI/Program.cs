@@ -19,6 +19,8 @@ namespace havuclukek.GatewayAPI
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+                .ConfigureAppConfiguration((host, config) => { config.AddJsonFile("ocelot.json"); })
+                .UseStartup<Startup>()
+                .UseUrls("http://*:7000");
     }
 }

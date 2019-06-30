@@ -3,8 +3,6 @@ namespace havuclukek.security.Authorization
 {
     public class AuthToken
     {
-        public AuthToken()
-        {
-        }
+        public string Token { get; set; }
     }
 }

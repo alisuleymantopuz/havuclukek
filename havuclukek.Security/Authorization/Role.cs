@@ -1,4 +1,4 @@
-﻿namespace havuclukek.Security.Authorization
+﻿namespace havuclukek.security.Authorization
 {
     public static class Role
     {
